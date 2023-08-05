@@ -11,22 +11,27 @@ class TeamsSelectionDropdown extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var teams = ref.watch(teamsProvider);
-    return DropdownButton<TeamModel>(
-      value: selectedTeam,
-      icon: const Icon(Icons.arrow_downward),
-      elevation: 16,
-      style: const TextStyle(color: Colors.black),
-      underline: Container(
-        height: 2,
-        color: Colors.black54,
-      ),
-      onChanged: onChanged,
-      items: teams.map<DropdownMenuItem<TeamModel>>((TeamModel value) {
-        return DropdownMenuItem<TeamModel>(
-          value: value,
-          child: Text(value.name ?? ""),
-        );
-      }).toList(),
+    return Column(
+      children: [
+        const Text("Wähl der hüttig Gägner", style: TextStyle(fontSize: 13.0, fontFamily: "UtilityOT"),),
+        DropdownButton<TeamModel>(
+          value: selectedTeam,
+          icon: const Icon(Icons.arrow_downward),
+          elevation: 16,
+          style: const TextStyle(color: Colors.black),
+          underline: Container(
+            height: 2,
+            color: Colors.black54,
+          ),
+          onChanged: onChanged,
+          items: teams.map<DropdownMenuItem<TeamModel>>((TeamModel value) {
+            return DropdownMenuItem<TeamModel>(
+              value: value,
+              child: Text(value.name ?? ""),
+            );
+          }).toList(),
+        ),
+      ],
     );
   }
 }

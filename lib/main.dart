@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ybticketapp/views/game_creation_view.dart';
-import 'package:ybticketapp/views/game_view.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));

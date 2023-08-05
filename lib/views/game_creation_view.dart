@@ -9,6 +9,7 @@ import 'package:ybticketapp/providers/teams_provider.dart';
 import 'package:ybticketapp/view_models/game_view_model.dart';
 import 'package:ybticketapp/views/components/dateInputComponent.dart';
 import 'package:ybticketapp/views/components/game_mode_selection_dropdown.dart';
+import 'package:ybticketapp/views/components/number_input_component.dart';
 import 'package:ybticketapp/views/components/timeComponent.dart';
 import 'package:ybticketapp/views/components/timeInputComponent.dart';
 import 'package:ybticketapp/views/game_view.dart';
@@ -25,6 +26,7 @@ class _GameCreationViewState extends ConsumerState<GameCreationView> {
   TeamModel? opponent;
   TextEditingController dateController = TextEditingController();
   TextEditingController timeController = TextEditingController();
+  TextEditingController gameController = TextEditingController();
   DateTime? selectedGameTime;
   GameModeType? selectedMode;
 
@@ -33,6 +35,7 @@ class _GameCreationViewState extends ConsumerState<GameCreationView> {
     return Scaffold(
       appBar: AppBar(title: const Text("Erstelle ein Ticket")),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TeamsSelectionDropdown(
             key: const Key("TeamSelection"),
@@ -80,6 +83,8 @@ class _GameCreationViewState extends ConsumerState<GameCreationView> {
             });
           }),
 
+          NumberInputComponent(controller: gameController, label: "Welles Spiu isch das hüt?"),
+
           GameModeSelectionDropdown(
             key: const Key("GameModeSelection"),
             selectedMode: selectedMode,
@@ -101,7 +106,7 @@ class _GameCreationViewState extends ConsumerState<GameCreationView> {
                 row: 7
               ),
               gameModeType: selectedMode,
-              gameNumber: 2,
+              gameNumber: int.tryParse(gameController.text),
             );
               Navigator.push(
                 context,

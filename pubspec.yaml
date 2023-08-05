@@ -35,8 +35,6 @@ dependencies:
   intl:
   qr_flutter:
   screenshot:
-  animated_styled_widget: ^0.4.7
-  simple_animations: ^5.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -73,6 +71,8 @@ flutter:
   - assets/logos/fcw.png
   - assets/logos/fcz.png
   - assets/logos/gc.png
+  - assets/icons/clock.svg
+  - assets/icons/day.svg
 
   #   - images/a_dot_ham.jpeg
 

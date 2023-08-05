@@ -1,12 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:animated_styled_widget/animated_styled_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:simple_animations/simple_animations.dart';
-import 'package:ybticketapp/views/components/box_with_moving_border_component.dart';
 
 class QrCodeComponent extends StatefulWidget {
   const QrCodeComponent({super.key, required this.qrCodeData});
@@ -28,11 +24,11 @@ class _StateQrCodeComponent extends State<QrCodeComponent> {
   }
 
   void _startTimer() {
-    const duration = Duration(milliseconds: 100);
+    const duration = Duration(milliseconds: 5);
     _timer = Timer.periodic(duration, (timer) {
       setState(() {
-        _progress += 0.02;
-        _secondProgress += 0.02;
+        _progress += 0.0013;
+        _secondProgress += 0.0013;
         if (_progress >= 1.0) {
           _progress = 0;
         }
@@ -50,49 +46,16 @@ class _StateQrCodeComponent extends State<QrCodeComponent> {
   }
   @override
   Widget build(BuildContext context) {
-    DynamicBorderSide firstStartBorder = DynamicBorderSide(
-        
-        width: 3,
-        begin: 0.toPercentLength,
-        end: 20.toPercentLength,
-        shift: 0.toPercentLength,
-        color: Colors.black,
-        strokeCap: StrokeCap.round,
-        strokeJoin: StrokeJoin.round);
-    DynamicBorderSide firstEndBorder = DynamicBorderSide(
-        width: 3,
-        begin: 0.toPercentLength,
-        end: 20.toPercentLength,
-        shift: 100.toPercentLength,
-        color: Colors.black,
-        strokeCap: StrokeCap.round,
-        strokeJoin: StrokeJoin.round);
-    DynamicBorderSide secondStartBorder = DynamicBorderSide(
-        width: 3,
-        begin: 50.toPercentLength,
-        end: 25.toPercentLength,
-        shift: 0.toPercentLength,
-        color: Colors.black,
-        strokeCap: StrokeCap.round,
-        strokeJoin: StrokeJoin.round);
-    DynamicBorderSide secondEndBorder = DynamicBorderSide(
-        width: 3,
-        begin: 100.toPercentLength,
-        end: 75.toPercentLength,
-        shift: 50.toPercentLength,
-        color: Colors.black,
-        strokeCap: StrokeCap.round,
-        strokeJoin: StrokeJoin.round);
-
-    DynamicBorderSide firstBorder = DynamicBorderSide.lerp(firstStartBorder, firstEndBorder, 0);
-
-    DynamicBorderSide secondBorder = DynamicBorderSide.lerp(secondStartBorder, secondEndBorder, 0);
-
     return Center(
         child: Container(
           width: 120,
           height: 120,
-          color: Colors.white,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Color.fromARGB(255, 238, 238, 238),
+              width: 1.5),
+            color: Colors.white,
+          ),
           child: CustomPaint(
             painter: BorderProgressPainter(progress: _progress, secondProgress: _secondProgress),
             child: Center(
