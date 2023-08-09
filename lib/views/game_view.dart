@@ -177,7 +177,7 @@ class GameView extends ConsumerWidget {
                 ),
                 Container(
                   color: const Color.fromRGBO(245, 245, 245, 1),
-                  child: const GameAdditionalInfoCardView(),
+                  child: GameAdditionalInfoCardView(game: game),
                 )
               ],
             ),
