@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:ybticketapp/model/game_mode_type.dart';
 import 'package:ybticketapp/view_models/game_view_model.dart';
+import 'package:ybticketapp/views/champions_league_icon_view.dart';
 import 'package:ybticketapp/views/game_additional_info_card_view.dart';
 import 'package:ybticketapp/views/game_box_view.dart';
 import 'package:ybticketapp/views/game_info_view.dart';
@@ -84,6 +86,7 @@ class GameView extends ConsumerWidget {
                                 padding: const EdgeInsets.all(15.0),
                                 child: Stack(
                                   children: [
+                                    game.gameModeType == GameModeType.superLeage ? 
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
@@ -95,13 +98,16 @@ class GameView extends ConsumerWidget {
                                           ],
                                         ),
                                       ],
-                                    ),
+                                    ) : const Text(""),
                                     Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           
-                                          TeamIconView(
+                                          
+                                          game.gameModeType == GameModeType.championsLeage ? 
+                                          const ChampionsLeagueIconView(key: Key("TeamView"))
+                                          : TeamIconView(
                                             key: const Key("TeamView"),
                                             homeTeam: game.homeTeam,
                                             awayTeam: game.awayTeam,                  
@@ -125,7 +131,7 @@ class GameView extends ConsumerWidget {
                                                 GameBoxView(title: "Reihe", value: game.seatModel?.row.toString() ?? ""),
                                                 GameBoxView(title: "Platz", value: game.seatModel?.seat.toString() ?? ""),
                                                 const GameBoxView(title: "Kategorie", value: "D Balkon YB-Fanzone"),
-                                                const GameBoxView(title: "Tarif", value: "Vollpreis"),
+                                                GameBoxView(title: "Tarif", value: game.gameModeType?.tarif ?? ''),
                                               ],
                                             ),
                                           ),
@@ -133,8 +139,8 @@ class GameView extends ConsumerWidget {
                                           GameInfoView(title: "Stadionöffnung", value: "${DateFormat('Hm').format(game.gameTime?.subtract(const Duration(minutes: 90)) ?? DateTime.now())} Uhr"),
                                           const GameInfoView(title: "Stadioneingang", value: "D Süd / D Ost"),
                                           GameInfoView(title: "Wettbewerb", value: "${game.gameModeType?.name ?? ''} 2023/24"),
-                                          const GameInfoView(title: "Spieltag", value: "Runde 3"),
-                                          const GameInfoView(title: "Abonnement", value: "Saisonkarte 2023/24"),
+                                          const GameInfoView(title: "Spieltag", value: "PLAY-OFF"),
+                                          GameInfoView(title: "Abonnement", value: game.gameModeType?.abotype ?? ''),
                                           SizedBox(height: 15),
                                           
                                         
