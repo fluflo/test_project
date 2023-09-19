@@ -26,6 +26,12 @@ const GameAdditionalInfoView({ Key? key, required this.title, required this.addi
         ),
         Linkify(
           text: additionalInformation,
+          linkStyle: const TextStyle(
+            fontSize: 15.0,
+            fontFamily: 'UtilityOT',
+            fontWeight: FontWeight.w700,
+            decorationColor: Colors.blue,
+          ),
           textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.grey[800],

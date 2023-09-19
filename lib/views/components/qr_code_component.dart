@@ -48,8 +48,8 @@ class _StateQrCodeComponent extends State<QrCodeComponent> {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
-          width: 120,
-          height: 120,
+          width: 140,
+          height: 140,
           decoration: BoxDecoration(
             border: Border.all(
               color: Color.fromARGB(255, 238, 238, 238),
@@ -64,7 +64,7 @@ class _StateQrCodeComponent extends State<QrCodeComponent> {
                   child: QrImageView( 
                   data: widget.qrCodeData,
                   version: 3,
-                  size: 100,
+                  size: 120,
                   gapless: true,
                 ),
               ),

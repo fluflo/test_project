@@ -37,8 +37,8 @@ class QrCodeView extends StatelessWidget {
                   alignment: Alignment.center,
                   child: 
                     Container(
-                      width: 115,
-                      height: 25,
+                      width: 140,
+                      height: 10,
                       alignment: Alignment.centerRight,
                       child: Text(
                         ticketNumber, 
@@ -50,8 +50,8 @@ class QrCodeView extends StatelessWidget {
             const CurrentTimeComponent(),
 
             Container(
-              width: 115,
-              height: 115,
+              width: 150,
+              height: 150,
               alignment: Alignment.center,
             ),
           ],

@@ -42,7 +42,7 @@ class GameView extends ConsumerWidget {
                     child: Column(
                       
                       children: [
-                        SizedBox(height: 140,),
+                        SizedBox(height: 160,),
                         Card(
                           color: Colors.white,
                           margin: const EdgeInsets.only(left: 15, right: 15),
@@ -191,7 +191,7 @@ class GameView extends ConsumerWidget {
             color: Colors.black,
             margin: const EdgeInsets.only(bottom: 10),
             child: const SizedBox(
-              height: 140,
+              height: 160,
               child: QrCodeView(key: Key("QRCodeView"), ticketNumber: "293931086241625872820005",)
             ),
           ),
