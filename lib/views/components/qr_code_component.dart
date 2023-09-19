@@ -27,8 +27,8 @@ class _StateQrCodeComponent extends State<QrCodeComponent> {
     const duration = Duration(milliseconds: 5);
     _timer = Timer.periodic(duration, (timer) {
       setState(() {
-        _progress += 0.0013;
-        _secondProgress += 0.0013;
+        _progress += 0.002;
+        _secondProgress += 0.002;
         if (_progress >= 1.0) {
           _progress = 0;
         }

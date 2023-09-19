@@ -1,10 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ybticketapp/model/team_model.dart';
 
-
-
-
-
 var teamsProvider = Provider<List<TeamModel>>((ref) {
   var teams = [
     TeamModel(name: "FC Basel", logoAssetName: "assets/logos/fcb.png"),
@@ -13,7 +9,7 @@ var teamsProvider = Provider<List<TeamModel>>((ref) {
     TeamModel(name: "FC Stade Lausanne-Ouchy", logoAssetName: "assets/logos/fcslo.png"),
     TeamModel(name: "FC Zürich", logoAssetName: "assets/logos/fcz.png"),
     TeamModel(name: "Grasshoppers Zürich", logoAssetName: "assets/logos/gc.png"),
-    TeamModel(name: "Maccabi Haifa FC", logoAssetName: ""),
+    TeamModel(name: "RB Leipzig", logoAssetName: ""),
   ];
 
   return teams;

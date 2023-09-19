@@ -86,7 +86,6 @@ class GameView extends ConsumerWidget {
                                 padding: const EdgeInsets.all(15.0),
                                 child: Stack(
                                   children: [
-                                    game.gameModeType == GameModeType.superLeage ? 
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
@@ -98,7 +97,7 @@ class GameView extends ConsumerWidget {
                                           ],
                                         ),
                                       ],
-                                    ) : const Text(""),
+                                    ),
                                     Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
@@ -139,7 +138,7 @@ class GameView extends ConsumerWidget {
                                           GameInfoView(title: "Stadionöffnung", value: "${DateFormat('Hm').format(game.gameTime?.subtract(const Duration(minutes: 90)) ?? DateTime.now())} Uhr"),
                                           const GameInfoView(title: "Stadioneingang", value: "D Süd / D Ost"),
                                           GameInfoView(title: "Wettbewerb", value: "${game.gameModeType?.name ?? ''} 2023/24"),
-                                          const GameInfoView(title: "Spieltag", value: "PLAY-OFF"),
+                                          const GameInfoView(title: "Spieltag", value: "Spieltag 1"),
                                           GameInfoView(title: "Abonnement", value: game.gameModeType?.abotype ?? ''),
                                           SizedBox(height: 15),
                                           

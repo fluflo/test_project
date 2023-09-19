@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 
 class GameAdditionalInfoView extends StatelessWidget {
-const GameAdditionalInfoView({ Key? key, required this.title, required this.additionalInformation }) : super(key: key);
+const GameAdditionalInfoView({ Key? key, required this.title, required this.additionalInformation, this.link = ""}) : super(key: key);
   final String title;
   final String additionalInformation;
+  final String link;
 
   @override
   Widget build(BuildContext context){
@@ -22,8 +24,8 @@ const GameAdditionalInfoView({ Key? key, required this.title, required this.addi
             height: 1.6
           ),
         ),
-        Text(
-          additionalInformation,
+        Linkify(
+          text: additionalInformation,
           textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.grey[800],

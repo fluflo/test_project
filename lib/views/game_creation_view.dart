@@ -102,8 +102,8 @@ class _GameCreationViewState extends ConsumerState<GameCreationView> {
               awayTeam: opponent,
               seatModel: SeatModel(
                 section: "Balkon D13",
-                seat: 622,
-                row: 7
+                seat: 625,
+                row: 8,
               ),
               gameModeType: selectedMode,
               gameNumber: int.tryParse(gameController.text),

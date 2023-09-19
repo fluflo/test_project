@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:ybticketapp/views/components/qr_code_component.dart';
 import 'package:ybticketapp/views/components/timeComponent.dart';
 
-
-
-
-
-
 class QrCodeView extends StatelessWidget {
   const QrCodeView({super.key, required this.ticketNumber});
   final String ticketNumber;

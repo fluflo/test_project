@@ -1,6 +1,6 @@
 enum GameModeType {
   superLeage("Credit Suisse Super League", 21.30, "Saisonkarte 2023/24", "Vollpreis"),
-  championsLeage("UEFA Champions League", 28.00, "Nein", "Vollpreis - Aborabatt"),
+  championsLeage("UEFA Champions League", 50.35, "UCL-Package", "Vollpreis - Aborabatt"),
   cup("Schweizer Cup", 30.0, "Nein", "Vollpreis");
   const GameModeType(this.name, this.ticketPrice, this.abotype, this.tarif);
   final String name;
