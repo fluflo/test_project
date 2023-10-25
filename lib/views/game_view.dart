@@ -138,7 +138,7 @@ class GameView extends ConsumerWidget {
                                           GameInfoView(title: "Stadionöffnung", value: "${DateFormat('Hm').format(game.gameTime?.subtract(const Duration(minutes: 90)) ?? DateTime.now())} Uhr"),
                                           const GameInfoView(title: "Stadioneingang", value: "D Süd / D Ost"),
                                           GameInfoView(title: "Wettbewerb", value: "${game.gameModeType?.name ?? ''} 2023/24"),
-                                          const GameInfoView(title: "Spieltag", value: "Runde 11"),
+                                          const GameInfoView(title: "Spieltag", value: "Spieltag 3"),
                                           GameInfoView(title: "Abonnement", value: game.gameModeType?.abotype ?? ''),
                                           SizedBox(height: 15),
                                           
