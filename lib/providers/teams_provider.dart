@@ -9,6 +9,9 @@ var teamsProvider = Provider<List<TeamModel>>((ref) {
     TeamModel(name: "FC Stade Lausanne-Ouchy", logoAssetName: "assets/logos/fcslo.png"),
     TeamModel(name: "FC Zürich", logoAssetName: "assets/logos/fcz.png"),
     TeamModel(name: "Grasshoppers Zürich", logoAssetName: "assets/logos/gc.png"),
+    TeamModel(name: "FC Luzern", logoAssetName: "assets/logos/fcl.png"),
+    TeamModel(name: "FC Servette", logoAssetName: "assets/logos/fcs.png"),
+    TeamModel(name: "FC St.Gallen", logoAssetName: "assets/logos/fcst.png"),
     TeamModel(name: "Manchester City", logoAssetName: ""),
   ];
 
@@ -19,6 +22,3 @@ final ybProvider = Provider<TeamModel>((ref) {
   return TeamModel(name: "BSC Young Boys", logoAssetName: "assets/logos/yb.png");
 });
 
-final winthiProvider = Provider<TeamModel>((ref) {
-  return TeamModel(name: "FC Winterthur", logoAssetName:"assets/logos/fcw.png");
-});

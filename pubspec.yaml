@@ -67,6 +67,9 @@ flutter:
   assets:
   - assets/logos/yb.png
   - assets/logos/fcb.png
+  - assets/logos/fcl.png
+  - assets/logos/fcs.png
+  - assets/logos/fcst.png
   - assets/logos/fclugano.png
   - assets/logos/fcslo.png
   - assets/logos/fcw.png
