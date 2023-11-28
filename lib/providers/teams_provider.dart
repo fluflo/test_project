@@ -12,7 +12,7 @@ var teamsProvider = Provider<List<TeamModel>>((ref) {
     TeamModel(name: "FC Luzern", logoAssetName: "assets/logos/fcl.png"),
     TeamModel(name: "FC Servette", logoAssetName: "assets/logos/fcs.png"),
     TeamModel(name: "FC St.Gallen", logoAssetName: "assets/logos/fcst.png"),
-    TeamModel(name: "Manchester City", logoAssetName: ""),
+    TeamModel(name: "FK Roter Stern Belgrad", logoAssetName: ""),
   ];
 
   return teams;
